@@ -16,3 +16,14 @@ $("#comprar").click(function () {
 	$("#block3").show();
 });
 
+// prueba
+
+$("#jugar").click(function () {
+	$("#block3").hide();
+	$("#block4").show();
+});
+
+$("#salir").click(function () {
+	$("#block4").hide();
+	$("#block5").show();
+});

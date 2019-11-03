@@ -14,7 +14,7 @@
 </head>
 
 <body id="body">
-
+<div id="betngo">
     <!---HEADER--->
     <div class="main-img">
         <br>
@@ -26,73 +26,47 @@
     <!---CHECK OUT--->
     <div id="block0" style="display:block">
         <div class="banner-area">
-            <div class="form">
             <br/>
-            <br/>
-            <br/>
-            <br/>
-            </div>
-        </div>
-    </div>
-    <!---FIN DE BIENVENIDA--->
-
-
-    <!---GRILLA DE JUEGOS--->
-    <div id="block3" style="display:none">
-        <div id="main-body">
-            <div class="banner-area">
-                <p style="font-weight: bold">
-                    <span class="">Créditos: $ XX.XXX</span>
-                    <br/>
-                    <span class="">Elejí tu tragaperras favorita</span>
-                </p>
-            </div>
-            <br/>
-            <!--tarjetas de juegos-->
-            <div class="main-page-wrapper">
-                <div class="row">
-                    <div class="col-xs-2"></div>
-                    <div class="col-xs-4"><a href="https://www.caesars.com/caesars-palace/casino/slots#"><img src="https://images-eu.ssl-images-amazon.com/images/I/813QZFxmpLL.png" class="img-responsive" alt="Cinque Terre" width=200 height=auto></a></div>
-                    <div class="col-xs-4"><a href="https://www.caesars.com/caesars-palace/casino/slots#"><img src="https://images-na.ssl-images-amazon.com/images/I/81DHJQE9CvL.png" class="img-responsive" alt="Cinque Terre" width=200 height=auto></a></div>
-                    <div class="col-xs-2"></div>
+            <p style="font-weight: bold">
+                <div class="main-page-wrapper">
+                    <div class="row">
+                            <div class="col-xs-12"></div><h1><span>{{nombreJugador}}</span></h1>
+                        </div>
+                    <div class="row">
+                            <div class="col-xs-12"></div><span>Crédito Inicial: $ {{creditoInicio}}</span>
+                        </div>
+                    <div class="row">
+                            <div class="col-xs-12"></div><span>Partidas Jugadas: {{ partidasJugadas }}</span>
+                        </div>
+                    <div class="row">
+                            <div class="col-xs-12"></div><span>Partidas Ganadas: {{ partidasGanadas }} </span>
+                        </div>
+                    <div class="row">
+                            <div class="col-xs-12"></div><span>Jackpots: {{ jackpots }}</span>
+                        </div>
+                    <div class="row">
+                            <div class="col-xs-12"></div><span>Crédito Final: $ {{ creditoAcumulado }} </span>
+                        </div>
                 </div>
-                <br/>
-                <div class="row">
-                    <div class="col-xs-2"></div>
-                    <div class="col-xs-4"><a href="https://www.caesars.com/caesars-palace/casino/slots#"><img src="https://images-eu.ssl-images-amazon.com/images/I/818P0Ob53JL.png" class="img-responsive" alt="Cinque Terre" width=200 height=auto></a></div>
-                    <div class="col-xs-4"><a href="https://www.caesars.com/caesars-palace/casino/slots#"><img src="https://images-eu.ssl-images-amazon.com/images/I/818dlqUKTvL.png" class="img-responsive" alt="Cinque Terre" width=200 height=auto></a></div>
-                    <div class="col-xs-2"></div>
-                </div>
-                <br/>
-                <div class="row">
-                    <div class="col-xs-2"></div>
-                    <div class="col-xs-4"><a href="https://www.caesars.com/caesars-palace/casino/slots#"><img src="https://lh3.googleusercontent.com/6lbF-g6YBFwr9wbgdgvTVk3L1rDHDQYdzDS7JSKApyGBUELcdKf2rP6jz5OYfikqMWx0" class="img-responsive" alt="Cinque Terre" width=200 height=auto></a></div>
-                    <div class="col-xs-4"><a href="https://www.caesars.com/caesars-palace/casino/slots#"><img src="https://lh3.googleusercontent.com/jsvRk86jjiW4sm2otGXk1l5csq8r0lSSKz2RgO32eQGxnc-jwgazhSyvOPezMj-ExTaz" class="img-responsive" alt="Cinque Terre" width=200 height=auto></a></div>
-                    <div class="col-xs-2"></div>
-                </div>
-                <br/>
-                <br/>
-                <br/>
-            </div>
-            <!--fin tarjetas de juegos-->
+            </p>
 
         </div>
     </div>
-    <!---FIN DE GRILLA DE JUEGOS--->
-
-    <div style="clear: both"></div>
+    <!---FIN DE CHECK OUT--->
 
     <!---LEGAL TEXT--->
     <div class="footer">
         <div class="legal-footer">
-        <span class="">Bet´N Go! codeado por ABLC&P Corp. para quedarnos con tu dinero.</span>
+        <span class="">Bet´N Go! codeado por G99.Inc para quedarnos con tu dinero.</span>
            
         </div>
     </div>
     <!---END OF LEGAL TEXT--->
+</div>
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/template.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/template.js"></script>
+<script src="js/betngo.js"></script>
+
 </body>
-
 </html>
