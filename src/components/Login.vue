@@ -1,12 +1,35 @@
 <template>
-<div class="login">
-  <div class="container">
-    <div class="row justify-content-md-center" style="margin-top: 10%">
-      <div class="col-4">
-        <button type="button"  class="btn btn-secondary btn-block">Paso 2</button>
+  <div class="Login" style="margin-top: 7%">
+    <h1>
+      Ingresa tu Nick
+      <br />
+    </h1>
+    <form class="form">
+      <p>
+        <input class="inputer" type="text" placeholder maxlength="10" />
+      </p>
+      <div @click='avanzar()' class="btn" id="suscribir">
+        <span >Continuar</span>
       </div>
-    </div>
-  </div>
-  <Login />
+    </form>
   </div>
 </template>
+
+
+
+<script>
+export default {
+  name: "Login",
+    props: {
+    welcome: { type: Function }
+  },
+  data() {},
+  methods: {
+    avanzar() {
+      // Do something with the value
+      this.welcome(3);
+    }
+  }
+};
+</script>
+
