@@ -1,11 +1,9 @@
 <template>
-  <div class="home"> 
-
-       <img src="images/logo.png" style="margin-top: 20px"/>
-    
+  <div class="home">
+    <img src="images/logo.png" style="margin-top: 20px"/>
     <Start :welcome="avanzar" v-if="paso === 1" />
     <Login :welcome="avanzar" v-if="paso === 2" />
-    <Credits v-if="paso === 3" />
+    <Credits :welcome="avanzar" v-if="paso === 3" />
   </div>
 </template>
 
@@ -22,17 +20,16 @@ export default {
     Login,
     Credits
   },
-  data() {
+  data () {
     return {
-      paso: 1,
+      paso: 1
     }
   },
   methods: {
-    avanzar(value) {
+    avanzar (value) {
       // Do something with the value
       this.paso = value
     }
   }
-  
 }
 </script>

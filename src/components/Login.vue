@@ -14,22 +14,22 @@
     </form>
   </div>
 </template>
-
-
-
 <script>
 export default {
-  name: "Login",
-    props: {
+  name: 'Login',
+  props: {
     welcome: { type: Function }
   },
-  data() {},
+  data: function () {
+    return {
+      test: []
+    }
+  },
   methods: {
-    avanzar() {
+    avanzar () {
       // Do something with the value
-      this.welcome(3);
+      this.welcome(3)
     }
   }
-};
+}
 </script>
-

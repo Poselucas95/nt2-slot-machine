@@ -10,17 +10,20 @@
 
 <script>
 export default {
-  name: "Start",
+  name: 'Start',
   props: {
     welcome: { type: Function }
   },
-  data() {},
+  data: function () {
+    return {
+      test: []
+    }
+  },
   methods: {
-    avanzar() {
+    avanzar () {
       // Do something with the value
-      this.welcome(2);
+      this.welcome(2)
     }
   }
-};
+}
 </script>
-
