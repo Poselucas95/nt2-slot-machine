@@ -1,59 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<!DOCTYPE html5>
+<html>
 
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
-    />
-    <link
-      rel="shortcut icon"
-      href="https://icon-library.net/images/slot-machine-icon/slot-machine-icon-2.jpg"
-      type="image/jpeg"
-    />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/template.css" />
-    <title>slot-machine</title>
-  </head>
-  <body id="body">
-    <noscript>
-      <strong
-        >We're sorry but slot-machine doesn't work properly without JavaScript
-        enabled. Please enable it to continue.</strong
-      >
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<head>
+    <title>BET 'N GO</title>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/betngo.css">
+    <link rel="shortcut icon" href="https://icon-library.net/images/slot-machine-icon/slot-machine-icon-2.jpg" type="image/jpeg" />
+    <script src="https://kit.fontawesome.com/28a9152f11.js" crossorigin="anonymous"></script>
+</head>
 
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    type="text/javascript"
-    src="http://code.jquery.com/jquery-1.7.2.min.js"
-    charset="utf-8"
-  ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
-  <script
-    type="text/javascript"
-    src="js/betngo.js"
-    charset="utf-8"
-  ></script>
+<body id="body">
+<div id="betngo">
+
+        <!---HEADER--->
+        <div class="main-img">
+            <br>
+                <img src="images/logo.png" />
+            <br>
+        </div>
+        <!---HEADER--->
+
+        <!---BIENVENIDA--->
+        <div id="block0" style="display:block">
+            <div class="banner-area">
+                <div class="form">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                    <form id="form" method="post" novalidate="">
+                        <div class="btn animated pulse infinite" id="entrar"><span class="">Entrar</span></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!---FIN DE BIENVENIDA--->
+
+        <!---REGISTRO DE USUARIO--->
+        <div id="block1" style="display:none">
+            <div class="banner-area">
+                <h1 class="descrOptin" style="display:block">
+                    <span class="">Ingresa tu Nick<br></span>
+                </h1>
+                <div class="form">
+                    <form id="formSubscription" name="contacto">
+                        <p>
+                            <input class="inputer" id="nombre" name="nombre" type="text" placeholder="" maxlength="10"/>
+                        </p>
+                        <div class="btn" id="suscribir"><span class="">Continuar</span></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!---FIN DE REGISTRO DE USUARIO--->
+
+        <!---COMPRA DE CREDITOS--->
+        <div id="block2" style="display:none">
+            <div class="banner-area">
+                <p class="">
+                    <span class="">Comprar Créditos</span>
+                </p>
+                <div class="form">
+                    <form id="formValidation" name="contacto">
+                        <p>
+                            <select class="inputer" id="creditos" name="creditos" type="number" placeholder="" maxlength="" />
+                                <option selected disabled>Seleccione importe</option>
+                                <option value="1000">$ 1.000</option>
+                                <option value="5000">$ 5.000</option>
+                                <option value="10000">$ 10.000</option>
+                                <option value="50000">$ 50.000</option>
+                            </select>
+                        </p>
+                        <div class="btn fade grow" id="comprar"><span class="">Confirmar</span></div>
+                        <div class="price-bottom">
+                            <span class=""></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+        </div>
+        <!---FIN DE COMPRA DE CREDITOS--->
+
+        <!---GRILLA DE JUEGOS--->
+        <div id="block3" style="display:none">
+            <div id="main-body">
+                <div class="banner-area">
+                    <p style="font-weight: bold">
+                        <span class="">Crédito: $ {{creditoAcumulado}}</span>
+                    </p>
+                </div>
+                <br/>
+                <!--tarjetas de juegos-->
+                <div class="main-page-wrapper">
+                    <div class="row">
+                        <div class="col-xs-2"></div>
+                        <div class="col-xs-4"><img src="images/vegas.png" class="img-responsive" alt="Vegas Slots" width=200 height=auto></a></div>
+                        <div class="col-xs-4"><img src="images/slotomania.png" class="img-responsive" alt="Sloto Mania Terre" width=200 height=auto></a></div>
+                        <div class="col-xs-2"></div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col-xs-2"></div>
+                        <div class="col-xs-4"><img src="images/caesars.png" class="img-responsive" alt="Ceasars" width=200 height=auto></a></div>
+                        <div class="col-xs-4"><img src="images/xxlchifei.png" class="img-responsive" alt="XXL Chifei" width=200 height=auto></a></div>
+                        <div class="col-xs-2"></div>
+                    </div>
+
+                </div>
+                <!--fin tarjetas de juegos-->
+
+            </div>
+        </div>
+        <!---FIN DE GRILLA DE JUEGOS--->
+
+        <div style="clear: both"></div>
+
+    <!---FOOTER TEXT--->
+    <div class="footer">
+        <button style="padding: 10px; position: absolute; top: -50px; right: 10px; background-color: transparent; border: 0; color: orange"> <i class="fas fa-sign-out-alt fa-3x"></i> </button>
+        <div class="legal-footer">
+            <span class="">Bet´N Go! codeado por G99.Inc para quedarnos con tu dinero.</span>
+        </div>
+    </div>
+    <!---END OF FOOTER--->
+
+</div>
+
+<script src="js/betngo.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/template.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+
+</body>
 </html>

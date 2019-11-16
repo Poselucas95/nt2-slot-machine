@@ -1,0 +1,128 @@
+<!DOCTYPE html5>
+<html>
+
+<head>
+    <title>BET 'N GO</title>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/betngo.css">
+    <link rel="shortcut icon" href="https://icon-library.net/images/slot-machine-icon/slot-machine-icon-2.jpg" type="image/jpeg" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/28a9152f11.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="body">
+<div id="betngo">
+        <div class="main-page-wrapper">
+    <!---HEADER--->
+    <div class="main-img main-page-wrapper" style="display: flex; align-items: center; justify-content: space-between; margin: 0; padding: 10px 10px;">
+        <button style="padding: 10px; background-color: transparent; border: 0; color: orange;"> <i class="fas fa-chevron-circle-left fa-3x"></i> </button>
+        <h3>Créditos: {{creditoInicio}}</h3>
+    </div>
+    <!---HEADER--->
+
+    <!---BODY--->
+    <form action="">
+    <div id="block22" style="flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh!important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;">
+        <h1 style="display: block; margin-bottom: 15px;">Jackpot: $ {{jackpotAcumulado}}</h1>
+        <div class="container" style="width: 100%;">
+            <ul style="padding-left:0; margin-top: 0; list-style: none; display: flex; flex-direction: row; align-items: center; justify-content: center;">
+                <li class="number_1 position-relative text-dark" style="width: 75px; font-size: 3em; font-weight: bold; height: 105px; margin-right: 5; margin-left: 5; background-color: #b8c6db; background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%); display: flex; align-items: center; justify-content: center;">??</li>
+                <li class="number_1 position-relative text-dark" style="width: 75px; font-size: 3em; font-weight: bold; height: 105px; margin-right: 5; margin-left: 5; background-color: #b8c6db; background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%); display: flex; align-items: center; justify-content: center;">??</li>
+                <li class="number_1 position-relative text-dark" style="width: 75px; font-size: 3em; font-weight: bold; height: 105px; margin-right: 5; margin-left: 5; background-color: #b8c6db; background-image: url(http://i.picasion.com/resize89/f7c23046efa8a415ce64810bf5c7ff49.gif); display: flex; align-items: center; justify-content: center;">??</li>
+            </ul>
+        </div>
+
+
+        <div class="container" style="margin: 15px;">
+
+          <h1><legend>Elige tu apuesta</legend></h1>
+
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-danger btn-lg">
+              <input type="radio" name="apuesta" id="apuesta10" > x10
+            </label>
+            <label class="btn btn-danger btn-lg">
+              <input type="radio" name="apuesta" id="apuesta50" > x50
+            </label>
+            <label class="btn btn-danger btn-lg active">
+              <input type="radio" name="apuesta" id="apuesta100" checked> x100
+            </label>
+          </div>
+        
+        </div>
+
+        <div>
+            <br/>
+            <input type="button" style="background-color: orangered; border: 0; width: 200px; padding: 15px 0; border-radius: 5px; font-size: 2em;"  type="button" id="generar-numeros" value="SPIN">
+        </div>
+        
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+      </button>
+    </div>
+</form>
+    <!---FIN DE BODY--->
+
+    <!---FOOTER TEXT--->
+    <div class="footer">
+        <button style="padding: 10px; position: absolute; top: -50px; right: 10px; background-color: transparent; border: 0; color: orange"> <i class="fas fa-sign-out-alt fa-3x"></i> </button>
+        <div class="legal-footer">
+            <span class="">Bet´N Go! codeado por G99.Inc para quedarnos con tu dinero.</span>
+        </div>
+    </div>
+    <!---END OF FOOTER--->
+
+</div>
+<!-- Button trigger modal -->
+      
+      
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content" style="background-color: rgba(255, 68, 0, 0.85);">
+            <div class="modal-header" style="border: none;">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style="color: #fff;">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" style="border: none;">
+                    <h1>¡¡¡Ganaste!!!</h1>
+              <h2 style="padding-bottom: 0;">{{nombre}}</h2>
+              <h2 style="padding-bottom: 0;">{{premio}}</h2>
+            </div>
+            <div class="modal-footer" style="border: none;">
+              <button type="button" style="width: 140px;" class="btn btn-warning btn-lg" data-dismiss="modal">Continuar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Fin del Modal -->
+
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/template.js"></script>
+<script src="js/betngo.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
