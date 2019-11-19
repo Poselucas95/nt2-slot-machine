@@ -1,7 +1,7 @@
 <template>
   <div class="Start" style="margin-top: 10%">
       <div class="form">
-        <div @click='avanzar()' class="btn animated pulse infinite" id="entrar">
+        <div class="btn animated pulse infinite" id="entrar">
           <span>Entrar</span>
         </div>
     </div>

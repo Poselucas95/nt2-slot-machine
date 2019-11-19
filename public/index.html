@@ -53,7 +53,7 @@
                 <div class="form">
                     <form id="formSubscription" name="contacto">
                         <p>
-                            <input class="inputer" id="nombre" name="nombre" type="text" placeholder="" maxlength="10"/>
+                            <input class="inputer" id="nombre" v-model="nombreJugador" name="nombre" type="text" placeholder="" maxlength="10"/>
                         </p>
                         <div class="btn" id="suscribir"><span class="">Continuar</span></div>
                     </form>
@@ -71,7 +71,7 @@
                 <div class="form">
                     <form id="formValidation" name="contacto">
                         <p>
-                            <select class="inputer" id="creditos" name="creditos" type="number" placeholder="" maxlength="" />
+                            <select class="inputer"  v-model="creditoInicio" id="creditos" name="creditos" type="number" placeholder="" maxlength="" />
                                 <option selected disabled>Seleccione importe</option>
                                 <option value="1000">$ 1.000</option>
                                 <option value="5000">$ 5.000</option>
@@ -79,7 +79,7 @@
                                 <option value="50000">$ 50.000</option>
                             </select>
                         </p>
-                        <div class="btn fade grow" id="comprar"><span class="">Confirmar</span></div>
+                        <div class="btn fade grow" id="comprar" v-on:click="confirmarImporte"><span class="">Confirmar</span></div>
                         <div class="price-bottom">
                             <span class=""></span>
                         </div>
@@ -105,7 +105,7 @@
                 <div class="main-page-wrapper">
                     <div class="row">
                         <div class="col-xs-2"></div>
-                        <div class="col-xs-4"><img src="images/vegas.png" class="img-responsive" alt="Vegas Slots" width=200 height=auto></a></div>
+                        <div class="col-xs-4"><img src="images/vegas.png" id="juego1" class="img-responsive" alt="Vegas Slots" width=200 height=auto></a></div>
                         <div class="col-xs-4"><img src="images/slotomania.png" class="img-responsive" alt="Sloto Mania Terre" width=200 height=auto></a></div>
                         <div class="col-xs-2"></div>
                     </div>
@@ -124,6 +124,24 @@
             </div>
         </div>
         <!---FIN DE GRILLA DE JUEGOS--->
+
+        <!---REGISTRO DE USUARIO--->
+        <div id="block4" style="display:none">
+            <div class="banner-area">
+                <div class='slot-machine'> 
+                    <button @click='start'>start</button> 
+                    <div class='slot' v-for='slot in slots' ref='slots'> <h2>{{ slot.title }}</h2> 
+                        <div class='slot__window'> 
+                            <div class='slot__wrap'> 
+                                <div class='slot__item' v-for='opt in slot.items'>{{ opt }}</div> 
+                                <div class='slot__item slot__item--copy' >{{ slot.items[0] }}</div>
+                            </div> 
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <!---FIN DE REGISTRO DE USUARIO--->
 
         <div style="clear: both"></div>
 

@@ -16,6 +16,11 @@ $("#comprar").click(function () {
 	$("#block3").show();
 });
 
+$("#juego1").click(function () {
+	$("#block3").hide();
+	$("#block4").show();
+});
+
 // prueba
 
 $("#jugar").click(function () {
