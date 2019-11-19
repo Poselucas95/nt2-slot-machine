@@ -767,3 +767,7 @@ a .lng_ar.active,a .lng_en.active {
   
   .slot__item--copy {
   }
+
+  .apButton {
+      background-color: black;
+  }

@@ -20,7 +20,7 @@
         <!---HEADER--->
         <div class="main-img">
             <br>
-                <img src="images/logo.png" />
+                <img id="imgLogo" src="images/logo.png" />
             <br>
         </div>
         <!---HEADER--->
@@ -105,16 +105,16 @@
                 <div class="main-page-wrapper">
                     <div class="row">
                         <div class="col-xs-2"></div>
-                        <div class="col-xs-4"><img src="images/vegas.png" id="juego1" class="img-responsive" alt="Vegas Slots" width=200 height=auto></a></div>
-                        <div class="col-xs-4"><img src="images/slotomania.png" class="img-responsive" alt="Sloto Mania Terre" width=200 height=auto></a></div>
+                        <div class="col-xs-4"><img src="images/vegas.png" id="juego1" v-on:click="elegirJuego(1)" class="img-responsive" alt="Vegas Slots" width=200 height=auto></a></div>
+                        <div class="col-xs-4"><img src="images/slotomania.png" id="juego2" v-on:click="elegirJuego(2)" class="img-responsive" alt="Sloto Mania Terre" width=200 height=auto></a></div>
                         <div class="col-xs-2"></div>
                     </div>
                     <br/>
                     <br/>
                     <div class="row">
                         <div class="col-xs-2"></div>
-                        <div class="col-xs-4"><img src="images/caesars.png" class="img-responsive" alt="Ceasars" width=200 height=auto></a></div>
-                        <div class="col-xs-4"><img src="images/xxlchifei.png" class="img-responsive" alt="XXL Chifei" width=200 height=auto></a></div>
+                        <div class="col-xs-4"><img src="images/caesars.png" id="juego3" v-on:click="elegirJuego(3)" class="img-responsive" alt="Ceasars" width=200 height=auto></a></div>
+                        <div class="col-xs-4"><img src="images/xxlchifei.png" id="juego4" v-on:click="elegirJuego(4)" class="img-responsive" alt="XXL Chifei" width=200 height=auto></a></div>
                         <div class="col-xs-2"></div>
                     </div>
 
@@ -127,18 +127,40 @@
 
         <!---REGISTRO DE USUARIO--->
         <div id="block4" style="display:none">
-            <div class="banner-area">
-                <div class='slot-machine'> 
-                    <button @click='start'>start</button> 
-                    <div class='slot' v-for='slot in slots' ref='slots'> <h2>{{ slot.title }}</h2> 
-                        <div class='slot__window'> 
-                            <div class='slot__wrap'> 
-                                <div class='slot__item' v-for='opt in slot.items'>{{ opt }}</div> 
-                                <div class='slot__item slot__item--copy' >{{ slot.items[0] }}</div>
+            <div class="row">
+                <span class="">Crédito: $ {{creditoAcumulado}}</span>
+            </div>
+            <div class="row">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-6">
+                    <div class='slot-machine'> 
+                            <div class='slot' v-for='slot in slots' ref='slots'> 
+                                <div class='slot__window'> 
+                                    <div class='slot__wrap'> 
+                                        <div class='slot__item' v-for='opt in slot.items'><img v-bind:src="opt" /></div> 
+                                        <div class='slot__item slot__item--copy' ><img v-bind:src="slot.items[0]" /></div>
+                                    </div> 
+                                </div> 
                             </div> 
-                        </div> 
-                    </div> 
+                        </div>
                 </div>
+                <div class="col-xs-3"></div>
+            </div>
+            <div class="row">
+                    <div class="col-xs-3"></div>
+                    <div class="col-xs-6">
+                        <button id="ap10" class="apButton" @click='setTamanioApuesta(10)'>x10</button>
+                        <button id="ap50" class="apButton" @click='setTamanioApuesta(50)'>x50</button>
+                        <button id="ap100" class="apButton" @click='setTamanioApuesta(100)'>x100</button> 
+                    </div>
+                    <div class="col-xs-3"></div>
+                </div>
+            <div class="row">
+                <div class="col-xs-5"></div>
+                <div class="col-xs-2">
+                    <button @click='start' v-if="tamanioApuesta > 0">start</button> 
+                </div>
+                <div class="col-xs-5"></div>
             </div>
         </div>
         <!---FIN DE REGISTRO DE USUARIO--->
