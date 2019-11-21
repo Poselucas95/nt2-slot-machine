@@ -145,7 +145,7 @@
             <div class="row" style="margin: 0;">
                 <div class="col-xs-5"></div>
                 <div class="col-xs-2">
-                    <button class="btn text-white px-3" @click='start' v-if="tamanioApuesta > 0">jugar</button> 
+                    <button class="btn text-white px-3"  @click='start' v-if="tamanioApuesta > 0" :disabled="creditoAcumulado <= 0 ? true : false">jugar</button> 
                 </div>
                 <div class="col-xs-5"></div>
             </div>
