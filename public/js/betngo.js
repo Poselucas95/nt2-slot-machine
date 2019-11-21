@@ -251,7 +251,6 @@ new Vue({
       if (this.elegidos[0].nombre == this.elegidos[1].nombre && this.elegidos[1].nombre == this.elegidos[2].nombre && !this.elegidos[0].esJackpot) {
         this.creditoAcumulado += this.tamanioApuesta * this.elegidos[0].valor
         this.partidasGanadas += 1
-        this.jackpotAcumulado += this.tamanioApuesta / 7
         alert('GANASTE $ ' + this.tamanioApuesta * this.elegidos[0].valor)
       } else if (this.elegidos[0].nombre == this.elegidos[1].nombre && this.elegidos[1].nombre == this.elegidos[2].nombre && this.elegidos[0].esJackpot) {
         this.creditoAcumulado += this.jackpotAcumulado
@@ -259,6 +258,8 @@ new Vue({
         this.jackpots += 1
         this.jackpotAcumulado = 5000
         alert('FELICITACIONES!!! HAZ GANADO EL JACKPOT ACUMULADO DE $ ' + this.jackpotAcumulado)
+      } else{
+        this.jackpotAcumulado += this.tamanioApuesta / 10
       }
       console.log('premio: ' + this.creditoAcumulado)
       console.log(this.elegidos[0].nombre == this.elegidos[1].nombre == this.elegidos[2].nombre)
