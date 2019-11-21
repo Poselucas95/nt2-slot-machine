@@ -38,6 +38,7 @@ input[type="radio"]{
 .main-page-wrapper {
     max-width: 525px;
     margin: 0 auto;
+    margin-top: 20px;
     background-color: #fff;
 }
 

@@ -129,7 +129,7 @@ new Vue({
   el: '#betngo',
 
   data: {
-    jackpotAcumulado: 510950,
+    jackpotAcumulado: 500500,
     nombreJugador: '',
     creditoInicio: 0,
     partidasJugadas: 0,
