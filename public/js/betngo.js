@@ -162,7 +162,8 @@ new Vue({
       }],
     opts: null,
     startedAt: null,
-    elegidos: []
+    elegidos: [],
+    jugable: true
   },
   methods: {
     saludar: function () {
@@ -171,21 +172,26 @@ new Vue({
     },
     confirmarImporte: function () {
       this.creditoAcumulado = this.creditoInicio
-        },
+    },
     setTamanioApuesta: function (tamanio) {
       this.tamanioApuesta = tamanio
-            this.start
-        },
+      this.start
+    },
     start: function () {
+      if (this.creditoAcumulado < this.tamanioApuesta) {
+        this.jugable = false
+      } else {
+        this.jugable = true
+      }
       this.elegidos = []
       if (this.opts) {
         return
       }
 
       this.creditoAcumulado -= this.tamanioApuesta
-            this.partidasJugadas += 1
-            
-            this.opts = this.slots.map((data, i) => {
+      this.partidasJugadas += 1
+
+      this.opts = this.slots.map((data, i) => {
         const slot = this.$refs.slots[i]
         const choice = Math.floor(Math.random() * data.items.length)
         console.log('choice', i, data.items[choice])
@@ -236,8 +242,7 @@ new Vue({
         console.log('finished')
         console.log(this.elegidos)
         this.darPremio()
-            }
-      else {
+      } else {
         next(this.animate)
       }
     },
@@ -245,50 +250,50 @@ new Vue({
       // Gana sin jackpot
       if (this.elegidos[0].nombre == this.elegidos[1].nombre && this.elegidos[1].nombre == this.elegidos[2].nombre && !this.elegidos[0].esJackpot) {
         this.creditoAcumulado += this.tamanioApuesta * this.elegidos[0].valor
-                this.partidasGanadas += 1
-                this.jackpotAcumulado += this.tamanioApuesta / 7
-                alert('GANASTE $ ' + this.tamanioApuesta * this.elegidos[0].valor)
+        this.partidasGanadas += 1
+        this.jackpotAcumulado += this.tamanioApuesta / 7
+        alert('GANASTE $ ' + this.tamanioApuesta * this.elegidos[0].valor)
       } else if (this.elegidos[0].nombre == this.elegidos[1].nombre && this.elegidos[1].nombre == this.elegidos[2].nombre && this.elegidos[0].esJackpot) {
         this.creditoAcumulado += this.jackpotAcumulado
-                this.partidasGanadas += 1
-                this.jackpots += 1
-                this.jackpotAcumulado = 5000
-                alert('FELICITACIONES!!! HAZ GANADO EL JACKPOT ACUMULADO DE $ ' + this.jackpotAcumulado)
+        this.partidasGanadas += 1
+        this.jackpots += 1
+        this.jackpotAcumulado = 5000
+        alert('FELICITACIONES!!! HAZ GANADO EL JACKPOT ACUMULADO DE $ ' + this.jackpotAcumulado)
       }
       console.log('premio: ' + this.creditoAcumulado)
       console.log(this.elegidos[0].nombre == this.elegidos[1].nombre == this.elegidos[2].nombre)
-            console.log('tamanio apuesta: ' + this.tamanioApuesta)
+      console.log('tamanio apuesta: ' + this.tamanioApuesta)
       console.log(this.elegidos[0].nombre + ' ' + this.elegidos[1].nombre + ' ' + this.elegidos[2].nombre)
-            console.log(this.juego)
-        },
+      console.log(this.juego)
+    },
     elegirJuego: function (numeroJuego) {
       let iconos
-            let juegoNuevo
-            switch (numeroJuego) {
+      let juegoNuevo
+      switch (numeroJuego) {
         case 1:
           iconos = [juego1[0].imagen, juego1[1].imagen, juego1[2].imagen]
-                    juegoNuevo = [juego1[0], juego1[1], juego1[2]]
-                    break;
+          juegoNuevo = [juego1[0], juego1[1], juego1[2]]
+          break
         case 2:
           iconos = [juego2[0].imagen, juego2[1].imagen, juego2[2].imagen, juego2[3].imagen]
-                    juegoNuevo = [juego2[0], juego2[1], juego2[2], juego2[3]]
-                    break;
+          juegoNuevo = [juego2[0], juego2[1], juego2[2], juego2[3]]
+          break
         case 3:
           iconos = [juego3[0].imagen, juego3[1].imagen, juego3[2].imagen, juego3[3].imagen, juego3[4].imagen]
-                    juegoNuevo = [juego3[0], juego3[1], juego3[2], juego3[3], juego3[4]]
-                    break;
+          juegoNuevo = [juego3[0], juego3[1], juego3[2], juego3[3], juego3[4]]
+          break
         case 4:
           iconos = [juego4[0].imagen, juego4[1].imagen, juego4[2].imagen, juego4[3].imagen, juego4[4].imagen, juego4[5].imagen]
-                    juegoNuevo = [juego4[0], juego4[1], juego4[2], juego4[3], juego4[4], juego4[5]]
+          juegoNuevo = [juego4[0], juego4[1], juego4[2], juego4[3], juego4[4], juego4[5]]
       }
       this.slots[0].items = iconos
-            this.slots[1].items = iconos
-            this.slots[2].items = iconos
-            this.juego = juegoNuevo
-            console.log('asdasd')
-            console.log(iconos)
-            console.log(this.slots)
-            return iconos
+      this.slots[1].items = iconos
+      this.slots[2].items = iconos
+      this.juego = juegoNuevo
+      console.log('asdasd')
+      console.log(iconos)
+      console.log(this.slots)
+      return iconos
     }
 
   }
