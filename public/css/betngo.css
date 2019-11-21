@@ -29,6 +29,12 @@ input[type="radio"]{
     border-top: 15px solid #000;
 }
 
+.resumen{
+    color: #ffbf00;
+    font-size: 22px;
+    box-shadow: 0 0 25px 0 #777;
+}
+
 .main-page-wrapper {
     max-width: 525px;
     margin: 0 auto;
