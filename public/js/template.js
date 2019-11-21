@@ -1,5 +1,5 @@
-
 $("#block0").show();
+$("#block99").hide();
 
 $("#entrar").click(function () {
 	$("#block0").hide();
@@ -41,6 +41,7 @@ $("#imgLogo").click(function () {
 	$("#block2").hide();
 	$("#block3").hide();
 	$("#block4").hide();
+	$("#block99").hide();
 	$("#block0").show();
 });
 
@@ -65,4 +66,13 @@ $("#ap100").click(function () {
 $("#salir").click(function () {
 	$("#block4").hide();
 	$("#block5").show();
+});
+
+$("#end").click(function () {
+	$("#block1").hide();
+	$("#block2").hide();
+	$("#block3").hide();
+	$("#block4").hide();
+	$("#block0").hide();
+	$("#block99").show();
 });
