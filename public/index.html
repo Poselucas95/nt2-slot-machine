@@ -137,15 +137,15 @@
             </div>
             <div class="row no-gutters" class="mx-auto">
                     <div class="col-xs-6 d-flex flex-row">
-                        <button id="ap10" class="apButton btn rounded border-0 px-2" @click='setTamanioApuesta(10)'>x10</button>
-                        <button id="ap50" class="apButton btn ml-2 rounded border-0 px-2" @click='setTamanioApuesta(50)'>x50</button>
-                        <button id="ap100" class="apButton btn ml-2 rounded border-0 px-2" @click='setTamanioApuesta(100)'>x100</button> 
+                        <button id="ap10" class="apButton btn rounded border-0 px-2" @click='setTamanioApuesta(10)' :disabled='creditoAcumulado < 10 ? true : false'>x10</button>
+                        <button id="ap50" class="apButton btn ml-2 rounded border-0 px-2" @click='setTamanioApuesta(50)' :disabled='creditoAcumulado < 50 ? true : false'>x50</button>
+                        <button id="ap100" class="apButton btn ml-2 rounded border-0 px-2" @click='setTamanioApuesta(100)' :disabled='creditoAcumulado < 100 ? true : false'>x100</button> 
                     </div>
                 </div>
             <div class="row" style="margin: 0;">
                 <div class="col-xs-5"></div>
                 <div class="col-xs-2">
-                    <button class="btn text-white px-3"  @click='start' v-if="tamanioApuesta > 0" :disabled="creditoAcumulado <= 0 ? true : false">jugar</button> 
+                    <button class="btn text-white px-3"  @click='start' v-if="tamanioApuesta > 0" :disabled="creditoAcumulado <= 0 || jugable === false ? true : false">jugar</button> 
                 </div>
                 <div class="col-xs-5"></div>
             </div>
