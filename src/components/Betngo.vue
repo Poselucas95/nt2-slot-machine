@@ -121,6 +121,9 @@
                         </div>
                 </div>
             </div>
+            <div class="row" style="margin: 0;">
+              <h4><legend>ELIGE TU APUESTA</legend></h4>
+            </div>
             <div class="row no-gutters mx-auto">
                     <div class="col-xs-6 d-flex flex-row">
                         <button id="ap10" class="apButton btn rounded border-0 px-2" @click='setTamanioApuesta(10)' :disabled='creditoAcumulado < 10 ? true : false'>x10</button>
