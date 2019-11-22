@@ -420,6 +420,7 @@ export default {
       }
     },
     animate: function (timestamp) {
+      this.jugable = false
       if (this.startedAt == null) {
         this.startedAt = timestamp
       }
@@ -442,6 +443,7 @@ export default {
 
         if (timeDiff > opt.duration) {
           opt.isFinished = true
+          
         }
       })
 
@@ -449,6 +451,7 @@ export default {
         this.opts = null
         this.startedAt = null
         this.darPremio()
+                this.jugable = true
       } else {
         next(this.animate)
       }
