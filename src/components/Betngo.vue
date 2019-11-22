@@ -47,15 +47,9 @@
                 <div class="form">
                     <form id="formValidation" name="contacto">
                         <p>
-<<<<<<< HEAD
-                            <select class="inputer"  v-model="creditoInicio" id="creditos" name="creditos" type="number" placeholder="" maxlength="" >
-                                <option selected disabled>Seleccione importe</option>
-                                <option value="200">$ 200</option>
-=======
                             <select class="inputer" id="creditos" name="creditos" v-model="creditoInicio">
                                 <option disabled>Seleccione importe</option>
                                 <option selected="selected" value="1000">$ 1.000</option>
->>>>>>> cd98243e99dc209435121e99c06dbf26a8fb00f3
                                 <option value="5000">$ 5.000</option>
                                 <option value="10000">$ 10.000</option>
                                 <option value="50000">$ 50.000</option>
@@ -474,8 +468,7 @@ export default {
             rgba(0,0,123,0.4)
             url("images/confetti.gif")
             center top 
-            repeat
-            cover`,
+            repeat`,
             confirmButtonText: '¡Continuar!'
         })
       } else if (this.elegidos[0].nombre == this.elegidos[1].nombre && this.elegidos[1].nombre == this.elegidos[2].nombre && this.elegidos[0].esJackpot) {
@@ -484,6 +477,18 @@ export default {
         this.jackpots += 1
         this.jackpotAcumulado = 5000
         alert('FELICITACIONES!!! HAZ GANADO EL JACKPOT ACUMULADO DE $ ' + this.jackpotAcumulado)
+        Swal.fire({
+          title: '¡¡FELICITACIONES!! HAZ GANADO EL JACKPOT ACUMULADO DE $ ' + this.jackpotAcumulado,
+          width: 600,
+          padding: '3em',
+          background: 'rgba(255,255,255, 0.9)',
+          backdrop: `
+            rgba(0,0,123,0.4)
+            url("images/confetti.gif")
+            center top 
+            repeat`,
+            confirmButtonText: '¡Continuar!'
+        })
       } else{
         this.jackpotAcumulado += this.tamanioApuesta / 10
       }
