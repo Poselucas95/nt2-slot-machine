@@ -9,16 +9,9 @@
         <!---HEADER--->
 
         <!---BIENVENIDA--->
-        <div id="block0" style="display:block">
-            <div class="banner-area">
+        <div id="block0" style="display: block">
+            <div class="banner-area w-100 d-flex align-items-center justify-content-center my-0" style="position: absolute; top: 0; left: 0; height: 100%;">
                 <div class="form">
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
                     <form id="form" method="post" novalidate="">
                         <div class="btn animated pulse infinite" id="entrar"><span class="">Entrar</span></div>
                     </form>
@@ -54,9 +47,9 @@
                 <div class="form">
                     <form id="formValidation" name="contacto">
                         <p>
-                            <select class="inputer"  v-model="creditoInicio" id="creditos" name="creditos" type="number" placeholder="" maxlength="" >
-                                <option selected disabled>Seleccione importe</option>
-                                <option value="1000">$ 1.000</option>
+                            <select class="inputer" id="creditos" name="creditos" v-model="creditoInicio">
+                                <option disabled>Seleccione importe</option>
+                                <option selected="selected" value="1000">$ 1.000</option>
                                 <option value="5000">$ 5.000</option>
                                 <option value="10000">$ 10.000</option>
                                 <option value="50000">$ 50.000</option>
@@ -104,13 +97,13 @@
             <div class="row" style="margin: 0;">
                 <h4 class="">JACKPOT $ {{jackpotAcumulado}}</h4>
             </div>
-            <div class="row" style="margin: 0;">
+            <div class="row no-gutters mb-2">
                 <span class="">Crédito: $ {{creditoAcumulado}}</span>
             </div>
             <div class="row" style="margin: 0;">
-                <div class="col-xs-12">
-                    <div class='slot-machine d-flex flex-row'> 
-                            <div class='slot col p-0 rounded' v-for='slot in slots' ref='slots'> 
+                <div class="col-12 px-0">
+                    <div class="slot-machine mx-auto d-flex flex-row align-items-center" style="max-width: 90%">
+                            <div class='slot col-4 p-0 rounded' v-for='slot in slots' ref='slots'> 
                                 <div class='slot__window'> 
                                     <div class='slot__wrap'> 
                                         <div class='slot__item' v-for='opt in slot.items'><img v-bind:src="opt" /></div> 
@@ -121,22 +114,20 @@
                         </div>
                 </div>
             </div>
-            <div class="row" style="margin: 0;">
-              <h4><legend>ELIGE TU APUESTA</legend></h4>
+            <div class="row no-gutters my-2">
+              <span>Elige tu apuesta</span>
             </div>
             <div class="row no-gutters mx-auto">
                     <div class="col-xs-6 d-flex flex-row">
-                        <button id="ap10" class="apButton btn rounded border-0 px-2" @click='setTamanioApuesta(10)' :disabled='creditoAcumulado < 10 ? true : false'>x10</button>
-                        <button id="ap50" class="apButton btn ml-2 rounded border-0 px-2" @click='setTamanioApuesta(50)' :disabled='creditoAcumulado < 50 ? true : false'>x50</button>
-                        <button id="ap100" class="apButton btn ml-2 rounded border-0 px-2" @click='setTamanioApuesta(100)' :disabled='creditoAcumulado < 100 ? true : false'>x100</button> 
+                        <button id="ap10" style="padding: 10px 0" class="apButton btn rounded border-0 px-2" @click='setTamanioApuesta(10)' :disabled='creditoAcumulado < 10 ? true : false'>x10</button>
+                        <button id="ap50" style="padding: 10px 0" class="apButton btn ml-2 rounded border-0 px-2" @click='setTamanioApuesta(50)' :disabled='creditoAcumulado < 50 ? true : false'>x50</button>
+                        <button id="ap100" style="padding: 10px 0" class="apButton btn ml-2 rounded border-0 px-2" @click='setTamanioApuesta(100)' :disabled='creditoAcumulado < 100 ? true : false'>x100</button> 
                     </div>
                 </div>
             <div class="row" style="margin: 0;">
-                <div class="col-xs-5"></div>
-                <div class="col-xs-2">
-                    <button class="btn text-white px-3"  @click='start' v-if='tamanioApuesta > 0' :disabled="creditoAcumulado <= 0 || jugable === false ? true : false">jugar</button> 
+                <div class="col">
+                    <button class="btn text-white px-3 py-2"  @click='start' v-if='tamanioApuesta > 0' :disabled="creditoAcumulado <= 0 || jugable === false ? true : false">jugar</button> 
                 </div>
-                <div class="col-xs-5"></div>
             </div>
         </div>
         </div>
@@ -145,36 +136,34 @@
         <div id="block99" class="main-page-wrapper" style="display:none">
             <div v-if="nombreJugador">
             <div class="banner-area">
-                <br/>
-                <span style="font-weight: bold">
+                <div style="font-weight: bold">
                     <div class="main-page-wrapper">
-                        <div class="resumen"></div>
-                            <div class="row" style="margin: 10px 0;">
-                                <div class="col-xs-12"><h3> {{nombreJugador}} </h3></div>
-                            </div>
-                            <br/>
-                            <div class="row" style="margin: 10px 0;">
-                                <div class="col-xs-6"><h5> Crédito Inicial: </h5></div>
-                                <div class="col-xs-6"><h5> $ {{creditoInicio}}</h5></div>
-                            </div>
-                            <div class="row" style="margin: 10px 0;">
-                                <div class="col-xs-6"><h5> Partidas Jugadas: </h5></div>
-                                <div class="col-xs-6"><h5 >{{partidasJugadas}} </h5></div>
-                            </div>
-                            <div class="row" style="margin: 10px 0;">
-                                <div class="col-xs-6"><h5> Partidas Ganadas: </h5></div>
-                                <div class="col-xs-6"><h5> {{partidasGanadas}} </h5></div>
-                            </div>
-                            <div class="row" style="margin: 10px 0;">
-                                <div class="col-xs-6"><h5> Jackpots: </h5></div>
-                                <div class="col-xs-6"><h5> {{jackpots}}</h5></div>
-                            </div>
-                            <div class="row" style="margin: 10px 0;">
-                                <div class="col-xs-6"><h5> Crédito Final: </h5></div>
-                                <div class="col-xs-6"><h5> $ {{creditoAcumulado}} </h5></div>
-                            </div>
-                    </div>
-                </span>
+                    <div class="row" style="margin-bottom: 15px;">
+                            <div class="col-12"><h1>{{nombreJugador}}</h1></div>
+                        </div>
+                    <br/>
+                    <div class="row" style="margin: 10px 0;">
+                            <div class="col-8"><h5>Crédito Inicial:</h5></div>
+                            <div class="col-4"><h5>$ {{creditoInicio}}</h5></div>
+                        </div>
+                    <div class="row" style="margin: 10px 0;">
+                            <div class="col-8"><h5>Partidas Jugadas:</h5></div>
+                            <div class="col-4"><h5>{{partidasJugadas}}</h5></div>
+                        </div>
+                    <div class="row" style="margin: 10px 0;">
+                            <div class="col-8"><h5>Partidas Ganadas: </h5></div>
+                            <div class="col-4"><h5>{{partidasGanadas}} </h5></div>
+                        </div>
+                    <div class="row" style="margin: 10px 0;">
+                            <div class="col-8"><h5>Jackpots:</h5></div>
+                            <div class="col-4"><h5>{{jackpots}}</h5></div>
+                        </div>
+                    <div class="row" style="margin: 10px 0;">
+                            <div class="col-8"><h5>Crédito Final:</h5></div>
+                            <div class="col-4"><h5>$ {{creditoAcumulado}} </h5></div>
+                        </div>
+                </div>
+                </div>
             </div> 
             </div >   
             <div v-else>
@@ -185,7 +174,7 @@
                     <br/>
                     <br/>
                     <br/>
-                    <div class="col-xs-12" style="color:#ffbf00"><h3>Regresa pronto!!</h3></div>
+                    <div class="col-12" style="color:#ffbf00"><h3>Regresa pronto!!</h3></div>
             </div>        
         </div>
     <!---FIN RESUMEN DEL JUEGO--->
@@ -194,7 +183,9 @@
 
     <!---FOOTER TEXT--->
     <div class="footer">
-        <button style="padding: 10px; position: absolute; top: -50px; right: 10px; background-color: transparent; border: 0; color: orange" id='end'> <i class="fas fa-sign-out-alt fa-3x"></i> </button>
+        <button style="padding: 10px; position: absolute; top: -50px; left: 10px; background-color: transparent; border: 0; color: orange" id='end'> <i class="fa fa-sign-in-alt fa-3x"></i> </button>
+        <button style="padding: 10px; position: absolute; top: -50px; right: 10px; background-color: transparent; border: 0; color: orange" id='end'> <i class="fa fa-sign-out-alt fa-3x"></i> </button>
+
         <div class="legal-footer">
             <span class="">Bet´N Go! codeado por el G99 para quitarte tu dinero.</span>
         </div>
@@ -342,7 +333,7 @@ export default {
     return{
     jackpotAcumulado: 500500,
     nombreJugador: '',
-    creditoInicio: 0,
+    creditoInicio: 1000,
     partidasJugadas: 0,
     partidasGanadas: 0,
     jackpots: 0,
@@ -406,9 +397,9 @@ export default {
 
         const opts = {
           el: slot.querySelector('.slot__wrap'),
-          finalPos: choice * 180,
+          finalPos: choice * 160,
           startOffset: 2000 + Math.random() * 500 + i * 500,
-          height: data.items.length * 180,
+          height: data.items.length * 160,
           duration: 3000 + i * 700, // milliseconds
           isFinished: false
         }

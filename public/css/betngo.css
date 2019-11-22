@@ -209,7 +209,7 @@ label {
 input[type="text"], select {
     width: 100%;
     max-width: 550px;
-    padding: 18px 0px 19px 50px;
+    padding: 15px 10px;
     margin: 0 auto;
     display: block;
     text-align: left;
@@ -558,7 +558,6 @@ select{    -webkit-appearance: none;margin-top: 10px;background: url(../images/i
     text-align: center;
     border-radius: 3px;
     text-transform: uppercase;
-    font-size: 22px;
     font-weight: 700;
     background-color: #EF7F1A;
     border-bottom: none;
@@ -728,6 +727,10 @@ a .lng_ar.active,a .lng_en.active {
     display: inline-block
 }
 
+.slot__item img {
+    width: 85px;
+}
+
 
 @media screen and (max-width:450px) {
     .main-img img {margin-top: 0}
@@ -746,7 +749,7 @@ a .lng_ar.active,a .lng_en.active {
   .slot__window {
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 200px;
+    height: 160px;
     overflow: hidden;
   }
   
@@ -759,7 +762,6 @@ a .lng_ar.active,a .lng_en.active {
       display: flex;
       justify-content: center;
       align-items: center;
-    margin-top: 20px;
     height: 160px;
     padding: 0 10px;
     text-align: center;
