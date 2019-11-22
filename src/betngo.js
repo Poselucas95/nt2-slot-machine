@@ -30,25 +30,25 @@ const juego2 = [
   {
     nombre: 'pica',
     imagen: 'icons/pica.png',
-    valor: 30,
+    valor: 50,
     esJackpot: false
   },
   {
     nombre: 'corazon',
     imagen: 'icons/cora.png',
-    valor: 30,
+    valor: 50,
     esJackpot: false
   },
   {
     nombre: 'diamante',
     imagen: 'icons/diamante.png',
-    valor: 30,
+    valor: 50,
     esJackpot: false
   },
   {
     nombre: 'perejil',
     imagen: 'icons/perejil.png',
-    valor: 30,
+    valor: 50,
     esJackpot: false
   }
 ]
@@ -57,31 +57,31 @@ const juego3 = [
   {
     nombre: 'tercero1',
     imagen: 'icons/tercero1.png',
-    valor: 50,
+    valor: 100,
     esJackpot: false
   },
   {
     nombre: 'tercero2',
     imagen: 'icons/tercero2.png',
-    valor: 50,
+    valor: 100,
     esJackpot: false
   },
   {
     nombre: 'tercero3',
     imagen: 'icons/tercero3.png',
-    valor: 50,
+    valor: 100,
     esJackpot: false
   },
   {
     nombre: 'tercero4',
     imagen: 'icons/tercero4.png',
-    valor: 50,
+    valor: 100,
     esJackpot: false
   },
   {
     nombre: 'tercero5',
     imagen: 'icons/tercero5.png',
-    valor: 50,
+    valor: 100,
     esJackpot: false
   }
 ]
@@ -90,37 +90,37 @@ const juego4 = [
   {
     nombre: 'chifei1',
     imagen: 'icons/chifei1.png',
-    valor: 80,
+    valor: 150,
     esJackpot: false
   },
   {
     nombre: 'chifei2',
     imagen: 'icons/chifei2.png',
-    valor: 80,
+    valor: 150,
     esJackpot: false
   },
   {
     nombre: 'chifei3',
     imagen: 'icons/chifei3.png',
-    valor: 80,
+    valor: 150,
     esJackpot: false
   },
   {
     nombre: 'chifei4',
     imagen: 'icons/chifei4.png',
-    valor: 80,
+    valor: 150,
     esJackpot: false
   },
   {
     nombre: 'chifei5',
     imagen: 'icons/chifei5.png',
-    valor: 80,
+    valor: 150,
     esJackpot: false
   },
   {
     nombre: 'chifei6',
     imagen: 'icons/chifei6.png',
-    valor: 80,
+    valor: 150,
     esJackpot: true
   }
 ]
