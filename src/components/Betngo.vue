@@ -56,7 +56,7 @@
                         <p>
                             <select class="inputer"  v-model="creditoInicio" id="creditos" name="creditos" type="number" placeholder="" maxlength="" >
                                 <option selected disabled>Seleccione importe</option>
-                                <option value="1000">$ 1.000</option>
+                                <option value="200">$ 200</option>
                                 <option value="5000">$ 5.000</option>
                                 <option value="10000">$ 10.000</option>
                                 <option value="50000">$ 50.000</option>
@@ -201,6 +201,9 @@
 </template>
 
 <script>
+
+import Swal from 'sweetalert2'
+import 'sweetalert2/dist/sweetalert2.min.css'
 
 const $ = require('jquery')
 window.$ = $
@@ -413,11 +416,7 @@ export default {
         return opts
       })
       next(this.animate)
-      if (this.creditoAcumulado < this.tamanioApuesta) {
-        this.jugable = false
-      } else {
-        this.jugable = true
-      }
+      
     },
     animate: function (timestamp) {
       this.jugable = false
@@ -451,7 +450,12 @@ export default {
         this.opts = null
         this.startedAt = null
         this.darPremio()
-                this.jugable = true
+        
+        if (this.creditoAcumulado < this.tamanioApuesta) {
+          this.jugable = false
+        } else {
+          this.jugable = true
+        }
       } else {
         next(this.animate)
       }
@@ -461,7 +465,19 @@ export default {
       if (this.elegidos[0].nombre == this.elegidos[1].nombre && this.elegidos[1].nombre == this.elegidos[2].nombre && !this.elegidos[0].esJackpot) {
         this.creditoAcumulado += this.tamanioApuesta * this.elegidos[0].valor
         this.partidasGanadas += 1
-        alert('GANASTE $ ' + this.tamanioApuesta * this.elegidos[0].valor)
+        Swal.fire({
+          title: '¡Ganaste $' + this.tamanioApuesta * this.elegidos[0].valor + '!',
+          width: 600,
+          padding: '3em',
+          background: 'rgba(255,255,255, 0.9)',
+          backdrop: `
+            rgba(0,0,123,0.4)
+            url("images/confetti.gif")
+            center top 
+            repeat
+            cover`,
+            confirmButtonText: '¡Continuar!'
+        })
       } else if (this.elegidos[0].nombre == this.elegidos[1].nombre && this.elegidos[1].nombre == this.elegidos[2].nombre && this.elegidos[0].esJackpot) {
         this.creditoAcumulado += this.jackpotAcumulado
         this.partidasGanadas += 1
