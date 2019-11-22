@@ -384,14 +384,10 @@ export default {
     },
     setTamanioApuesta: function (tamanio) {
       this.tamanioApuesta = tamanio
+      this.jugable = true
       this.start
     },
     start: function () {
-      if (this.creditoAcumulado < this.tamanioApuesta) {
-        this.jugable = false
-      } else {
-        this.jugable = true
-      }
       this.elegidos = []
       if (this.opts) {
         return
@@ -417,6 +413,11 @@ export default {
         return opts
       })
       next(this.animate)
+      if (this.creditoAcumulado < this.tamanioApuesta) {
+        this.jugable = false
+      } else {
+        this.jugable = true
+      }
     },
     animate: function (timestamp) {
       if (this.startedAt == null) {
