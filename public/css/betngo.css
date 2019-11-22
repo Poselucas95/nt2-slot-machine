@@ -776,3 +776,27 @@ a .lng_ar.active,a .lng_en.active {
   .apButton {
       color: #fff;
   }
+
+  /* SWAL */
+
+  .swal2-styled.swal2-confirm {
+    border: 0;
+    border-radius: .25em;
+    background: initial;
+    background-color: #fd7e14;
+    color: #fff;
+    font-size: 1.0625em;
+    border-left-color: #fd7e14;
+    border-right-color: #fd7e14;
+}
+
+.swal2-styled.swal2-confirm {
+    border: 0 !important;
+    border-radius: .25em !important;
+    background: initial !important;
+    background-color: #ea9747 !important;
+    color: #fff !important;
+    font-size: 1.0625em !important;
+    border-left-color: #ea9747 !important;
+    border-right-color: #ea9747 !important;
+}

@@ -463,9 +463,9 @@ export default {
           title: '¡Ganaste $' + this.tamanioApuesta * this.elegidos[0].valor + '!',
           width: 600,
           padding: '3em',
-          background: 'rgba(255,255,255, 0.9)',
+          background: 'rgba(255,255,255, 0.95)',
           backdrop: `
-            rgba(0,0,123,0.4)
+            rgba(255,255,255,0.2)
             url("images/confetti.gif")
             center top 
             repeat`,
@@ -475,15 +475,16 @@ export default {
         this.creditoAcumulado += this.jackpotAcumulado
         this.partidasGanadas += 1
         this.jackpots += 1
+        this.jackpotGanado = jackpotAcumulado
         this.jackpotAcumulado = 5000
-        alert('FELICITACIONES!!! HAZ GANADO EL JACKPOT ACUMULADO DE $ ' + this.jackpotAcumulado)
+        alert('FELICITACIONES!!! HAZ GANADO EL JACKPOT DE $ ' + this.jackpotGanado)
         Swal.fire({
-          title: '¡¡FELICITACIONES!! HAZ GANADO EL JACKPOT ACUMULADO DE $ ' + this.jackpotAcumulado,
+          title: '¡¡FELICITACIONES!! HAZ GANADO EL JACKPOT DE $ ' + this.jackpotGanado,
           width: 600,
           padding: '3em',
-          background: 'rgba(255,255,255, 0.9)',
+          background: 'rgba(255,255,255, 0.95)',
           backdrop: `
-            rgba(0,0,123,0.4)
+            rgba(255,255,255,0.2)
             url("images/confetti.gif")
             center top 
             repeat`,
