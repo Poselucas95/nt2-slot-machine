@@ -3,7 +3,7 @@
         <!---HEADER--->
         <div class="main-img">
             <br>
-                <img id="imgLogo"  src="images/logo.png" />
+                <img id=""  src="images/logo.png" />
             <br>
         </div>
         <!---HEADER--->
@@ -82,14 +82,14 @@
                         <div class="col-5 p-2"><img src="images/vegas.png" id="juego1" v-on:click="elegirJuego(1)" class="w-100" alt="Vegas Slots"></a></div>
                         <div class="col-5 p-2"><img src="images/slotomania.png" id="juego2" v-on:click="elegirJuego(2)" class="w-100" alt="Sloto Mania Terre"></a></div>
                         <div class="col-5 p-2"><img src="images/caesars.png" id="juego3" v-on:click="elegirJuego(3)" class="w-100" alt="Ceasars"></a></div>
-                        <div class="col-5 p-2"><img src="images/double.png" id="juego4" v-on:click="elegirJuego(4)" class="w-100" alt="XXL Chifei"></a></div>
+                        <div class="col-5 p-2"><img src="images/xxlchifei.png" id="juego4" v-on:click="elegirJuego(4)" class="w-100" alt="XXL Chifei"></a></div>
                     </div>
                 </div>
                 <!--fin tarjetas de juegos-->
             </div>
             <div class="footer">
-              <button style="padding: 10px; position: absolute; top: -50px; left: 10px; background-color: transparent; border: 0; color: orange" id='info'> <i class="fas fa-info fa-3x"></i> </button>
-              <button style="padding: 10px; position: absolute; top: -50px; right: 10px; background-color: transparent; border: 0; color: orange" id='checkout'> <i class="fas fa-sign-out-alt fa-3x"></i> </button>
+              <button style="padding: 10px; position: absolute; top: -60px; left: 10px; background-color: transparent; border: 0; color: orange" id='info'> <i class="fas fa-info fa-3x"></i> </button>
+              <button style="padding: 10px; position: absolute; top: -60px; right: 10px; background-color: transparent; border: 0; color: orange" id='checkout'> <i class="fas fa-sign-out-alt fa-3x"></i> </button>
             </div>
         </div>
         <!---FIN DE GRILLA DE JUEGOS--->
@@ -135,8 +135,8 @@
         </div>
 
         <div class="footer">
-          <button style="padding: 10px; position: absolute; top: -50px; left: 10px; background-color: transparent; border: 0; color: orange" id='seljuegos'> <i class="fas fa-arrow-circle-left fa-3x"></i> </button>
-          <button style="padding: 10px; position: absolute; top: -50px; right: 10px; background-color: transparent; border: 0; color: orange" id='info2'> <i class="fas fa-info fa-3x"></i> </button>
+          <button style="padding: 10px; position: absolute; top: -60px; left: 10px; background-color: transparent; border: 0; color: orange" id='seljuegos'> <i class="fas fa-arrow-circle-left fa-3x"></i> </button>
+          <button style="padding: 10px; position: absolute; top: -60px; right: 10px; background-color: transparent; border: 0; color: orange" id='info2'> <i class="fas fa-info fa-3x"></i> </button>
         </div>
 
         </div>
@@ -145,52 +145,72 @@
         <!--- RESUMEN DEL JUEGO BLOCK99--->
         <div id="block99" class="main-page-wrapper" style="display:none">
             <div v-if="nombreJugador">
-            <div class="banner-area">
-                <div style="font-weight: bold">
-                    <div class="main-page-wrapper">
-                    <div class="row" style="margin-bottom: 15px;">
-                            <div class="col-12"><h1>{{nombreJugador}}</h1></div>
-                        </div>
-                    <br/>
-                    <div class="row" style="margin: 10px 0;">
-                            <div class="col-8"><h5>Crédito Inicial:</h5></div>
-                            <div class="col-4"><h5>$ {{creditoInicio}}</h5></div>
-                        </div>
-                    <div class="row" style="margin: 10px 0;">
-                            <div class="col-8"><h5>Partidas Jugadas:</h5></div>
-                            <div class="col-4"><h5>{{partidasJugadas}}</h5></div>
-                        </div>
-                    <div class="row" style="margin: 10px 0;">
-                            <div class="col-8"><h5>Partidas Ganadas: </h5></div>
-                            <div class="col-4"><h5>{{partidasGanadas}} </h5></div>
-                        </div>
-                    <div class="row" style="margin: 10px 0;">
-                            <div class="col-8"><h5>Jackpots:</h5></div>
-                            <div class="col-4"><h5>{{jackpots}}</h5></div>
-                        </div>
-                    <div class="row" style="margin: 10px 0;">
-                            <div class="col-8"><h5>Crédito Final:</h5></div>
-                            <div class="col-4"><h5>$ {{creditoAcumulado}} </h5></div>
-                        </div>
-                </div>
-                </div>
-            </div> 
+              <div class="banner-area">
+                  <div style="font-weight: bold">
+                      <div class="main-page-wrapper">
+                      <div class="row" style="margin-bottom: 15px;">
+                              <div class="col-12"><h1>{{nombreJugador}}</h1></div>
+                          </div>
+                      <br/>
+                      <div class="row" style="margin: 10px 0;">
+                              <div class="col-8"><h5>Crédito Inicial:</h5></div>
+                              <div class="col-4"><h5>$ {{creditoInicio}}</h5></div>
+                          </div>
+                      <div class="row" style="margin: 10px 0;">
+                              <div class="col-8"><h5>Partidas Jugadas:</h5></div>
+                              <div class="col-4"><h5>{{partidasJugadas}}</h5></div>
+                          </div>
+                      <div class="row" style="margin: 10px 0;">
+                              <div class="col-8"><h5>Partidas Ganadas: </h5></div>
+                              <div class="col-4"><h5>{{partidasGanadas}} </h5></div>
+                          </div>
+                      <div class="row" style="margin: 10px 0;">
+                              <div class="col-8"><h5>Jackpots:</h5></div>
+                              <div class="col-4"><h5>{{jackpots}}</h5></div>
+                          </div>
+                      <div class="row" style="margin: 10px 0;">
+                              <div class="col-8"><h5>Crédito Final:</h5></div>
+                              <div class="col-4"><h5>$ {{creditoAcumulado}} </h5></div>
+                          </div>
+                  </div>
+                  </div>
+              </div> 
             </div >
-            
             <div v-else>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <div class="col-12" style="color:#ffbf00"><h3>Regresa pronto!!</h3></div>
-            </div>    
-
+              <div class="banner-area">
+                  <div style="font-weight: bold">
+                      <div class="main-page-wrapper">
+                      <div class="row" style="margin-bottom: 15px;">
+                              <div class="col-12"><h1>INVITADO</h1></div>
+                          </div>
+                      <br/>
+                      <div class="row" style="margin: 10px 0;">
+                              <div class="col-8"><h5>Crédito Inicial:</h5></div>
+                              <div class="col-4"><h5>$ {{creditoInicio}}</h5></div>
+                          </div>
+                      <div class="row" style="margin: 10px 0;">
+                              <div class="col-8"><h5>Partidas Jugadas:</h5></div>
+                              <div class="col-4"><h5>{{partidasJugadas}}</h5></div>
+                          </div>
+                      <div class="row" style="margin: 10px 0;">
+                              <div class="col-8"><h5>Partidas Ganadas: </h5></div>
+                              <div class="col-4"><h5>{{partidasGanadas}} </h5></div>
+                          </div>
+                      <div class="row" style="margin: 10px 0;">
+                              <div class="col-8"><h5>Jackpots:</h5></div>
+                              <div class="col-4"><h5>{{jackpots}}</h5></div>
+                          </div>
+                      <div class="row" style="margin: 10px 0;">
+                              <div class="col-8"><h5>Crédito Final:</h5></div>
+                              <div class="col-4"><h5>$ {{creditoAcumulado}} </h5></div>
+                          </div>
+                  </div>
+                  </div>
+              </div> 
+            </div>
             <div class="footer">
-              <button style="padding: 10px; position: absolute; top: -50px; left: 10px; background-color: transparent; border: 0; color: orange" id='juegosBack'> <i class="fas fa-arrow-circle-left fa-3x"></i> </button>
-              <button style="padding: 10px; position: absolute; top: -50px; right: 10px; background-color: transparent; border: 0; color: orange" id='reinicio'> <i class="fas fa-power-off fa-3x"></i> </button>
+              <button style="padding: 10px; position: absolute; top: -60px; left: 10px; background-color: transparent; border: 0; color: orange" id='juegosBack'> <i class="fas fa-arrow-circle-left fa-3x"></i> </button>
+              <button style="padding: 10px; position: absolute; top: -60px; right: 10px; background-color: transparent; border: 0; color: orange" id='reinicio'> <i class="fas fa-power-off fa-3x"></i> </button>
             </div>
 
         </div>
@@ -210,6 +230,16 @@
     </div>
     <!---END OF FOOTER--->
 </div>
+
+
+    <!---MODAL INFO--->
+
+
+    <!---FIN MODAL INFO--->
+
+
+
+
 </template>
 
 <script>
@@ -326,7 +356,7 @@ const next = window.requestAnimationFrame ||
     nombre: 'chifei3',
     imagen: 'icons/chifei3.png',
     valor: 80,
-    esJackpot: false
+    esJackpot: true
   },
   {
     nombre: 'chifei4',
@@ -344,7 +374,7 @@ const next = window.requestAnimationFrame ||
     nombre: 'chifei6',
     imagen: 'icons/chifei6.png',
     valor: 80,
-    esJackpot: true
+    esJackpot: false
   }
 ]
 
@@ -601,21 +631,13 @@ $("#checkout").click(function () { // ir al checkout
 });
 
 $("#seljuegos").click(function () { // volver al selec de juegos (desde un juego)
-	$("#block1").hide();
-	$("#block2").hide();
 	$("#block3").show();
 	$("#block4").hide();
-	$("#block99").hide();
-	$("#block0").hide();
 });
 
-$("#juegosBack").click(function () { // volver al selec de juegos (desde un juego)
-	$("#block1").hide();
-	$("#block2").hide();
+$("#juegosBack").click(function () { // volver al selec de juegos (desde el checkout)
 	$("#block3").show();
-	$("#block4").hide();
 	$("#block99").hide();
-	$("#block0").hide();
 });
 
 $("#reinicio").click(function () { // volver al inicio
@@ -644,6 +666,8 @@ $("#ap100").click(function () {
 
   }
 }
+
+// TEST
 
 
 </script>
