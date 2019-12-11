@@ -8,7 +8,7 @@
         </div>
         <!---HEADER--->
 
-        <!---BIENVENIDA--->
+        <!---BIENVENIDA BLOCK0--->
         <div id="block0" style="display: block">
             <div class="banner-area w-100 d-flex align-items-center justify-content-center my-0" style="position: absolute; top: 0; left: 0; height: 100%;">
                 <div class="form">
@@ -20,7 +20,7 @@
         </div>
         <!---FIN DE BIENVENIDA--->
 
-        <!---REGISTRO DE USUARIO--->
+        <!---REGISTRO DE USUARIO BLOCK1--->
         <div id="block1" style="display:none">
             <div class="banner-area">
                 <h1 class="descrOptin" style="display:block">
@@ -38,7 +38,7 @@
         </div>
         <!---FIN DE REGISTRO DE USUARIO--->
 
-        <!---COMPRA DE CREDITOS--->
+        <!---COMPRA DE CREDITOS BLOCK2--->
         <div id="block2" style="display:none">
             <div class="banner-area">
                 <p class="">
@@ -68,7 +68,7 @@
         </div>
         <!---FIN DE COMPRA DE CREDITOS--->
 
-        <!---GRILLA DE JUEGOS--->
+        <!---GRILLA DE JUEGOS BLOCK3--->
         <div id="block3" style="display:none">
             <div id="main-body">
                 <div class="banner-area">
@@ -82,16 +82,19 @@
                         <div class="col-5 p-2"><img src="images/vegas.png" id="juego1" v-on:click="elegirJuego(1)" class="w-100" alt="Vegas Slots"></a></div>
                         <div class="col-5 p-2"><img src="images/slotomania.png" id="juego2" v-on:click="elegirJuego(2)" class="w-100" alt="Sloto Mania Terre"></a></div>
                         <div class="col-5 p-2"><img src="images/caesars.png" id="juego3" v-on:click="elegirJuego(3)" class="w-100" alt="Ceasars"></a></div>
-                        <div class="col-5 p-2"><img src="images/xxlchifei.png" id="juego4" v-on:click="elegirJuego(4)" class="w-100" alt="XXL Chifei"></a></div>
+                        <div class="col-5 p-2"><img src="images/double.png" id="juego4" v-on:click="elegirJuego(4)" class="w-100" alt="XXL Chifei"></a></div>
                     </div>
                 </div>
                 <!--fin tarjetas de juegos-->
-
+            </div>
+            <div class="footer">
+              <button style="padding: 10px; position: absolute; top: -50px; left: 10px; background-color: transparent; border: 0; color: orange" id='info'> <i class="fas fa-info fa-3x"></i> </button>
+              <button style="padding: 10px; position: absolute; top: -50px; right: 10px; background-color: transparent; border: 0; color: orange" id='checkout'> <i class="fas fa-sign-out-alt fa-3x"></i> </button>
             </div>
         </div>
         <!---FIN DE GRILLA DE JUEGOS--->
 
-        <!---REGISTRO DE USUARIO--->
+        <!--- JUEGO BLOCK4--->
         <div id="block4" class="main-page-wrapper" style="display:none">
             <div class="main-page-wrapper d-flex flex-column align-items-center">
             <div class="row" style="margin: 0;">
@@ -130,9 +133,16 @@
                 </div>
             </div>
         </div>
-        </div>
-        <!---FIN DE REGISTRO DE USUARIO--->
 
+        <div class="footer">
+          <button style="padding: 10px; position: absolute; top: -50px; left: 10px; background-color: transparent; border: 0; color: orange" id='seljuegos'> <i class="fas fa-arrow-circle-left fa-3x"></i> </button>
+          <button style="padding: 10px; position: absolute; top: -50px; right: 10px; background-color: transparent; border: 0; color: orange" id='info2'> <i class="fas fa-info fa-3x"></i> </button>
+        </div>
+
+        </div>
+        <!---FIN DE JUEGO--->
+
+        <!--- RESUMEN DEL JUEGO BLOCK99--->
         <div id="block99" class="main-page-wrapper" style="display:none">
             <div v-if="nombreJugador">
             <div class="banner-area">
@@ -165,7 +175,8 @@
                 </div>
                 </div>
             </div> 
-            </div >   
+            </div >
+            
             <div v-else>
                     <br/>
                     <br/>
@@ -175,19 +186,26 @@
                     <br/>
                     <br/>
                     <div class="col-12" style="color:#ffbf00"><h3>Regresa pronto!!</h3></div>
-            </div>        
+            </div>    
+
+            <div class="footer">
+              <button style="padding: 10px; position: absolute; top: -50px; left: 10px; background-color: transparent; border: 0; color: orange" id='juegosBack'> <i class="fas fa-arrow-circle-left fa-3x"></i> </button>
+              <button style="padding: 10px; position: absolute; top: -50px; right: 10px; background-color: transparent; border: 0; color: orange" id='reinicio'> <i class="fas fa-power-off fa-3x"></i> </button>
+            </div>
+
         </div>
-    <!---FIN RESUMEN DEL JUEGO--->
+        <!---FIN RESUMEN DEL JUEGO--->
 
         <div style="clear: both"></div>
 
     <!---FOOTER TEXT--->
     <div class="footer">
+         <!---
         <button style="padding: 10px; position: absolute; top: -50px; left: 10px; background-color: transparent; border: 0; color: orange" id='end'> <i class="fa fa-sign-in-alt fa-3x"></i> </button>
         <button style="padding: 10px; position: absolute; top: -50px; right: 10px; background-color: transparent; border: 0; color: orange" id='end'> <i class="fa fa-sign-out-alt fa-3x"></i> </button>
-
+        --->
         <div class="legal-footer">
-            <span class="">Bet´N Go! codeado por el G99 para quitarte tu dinero.</span>
+            <span class="">Bet´N Go! codeado por el G99 para quedarnos con tu dinero.</span>
         </div>
     </div>
     <!---END OF FOOTER--->
@@ -403,7 +421,7 @@ export default {
           finalPos: choice * 160,
           startOffset: 2000 + Math.random() * 500 + i * 500,
           height: data.items.length * 160,
-          duration: 3000 + i * 700, // milliseconds
+          duration: 3000 + i * 700, // milisegundos
           isFinished: false
         }
         this.elegidos.push(this.juego[choice])
@@ -429,7 +447,7 @@ export default {
         const power = 3
         const offset = (Math.pow(timeRemaining, power) / Math.pow(opt.duration, power)) * opt.startOffset
 
-        // negative, such that slots move from top to bottom
+        // ve en negativo, asi los slots se mueven de arriba hacia abajo
         const pos = -1 * Math.floor((offset + opt.finalPos) % opt.height)
 
         opt.el.style.transform = 'translateY(' + pos + 'px)'
@@ -523,55 +541,89 @@ export default {
     }
 
   },
-  mounted(){
-      $("#block0").show();
-$("#block99").hide();
 
-$("#entrar").click(function () {
+
+// navegación
+
+mounted(){
+  $("#block0").show();
+  $("#block99").hide();
+
+$("#entrar").click(function () { // mostrar input de nombre
 	$("#block0").hide();
 	$("#block1").show();
 });
 
-$("#suscribir").click(function () {
+$("#suscribir").click(function () { // mostrar compra de creditos
 	$("#block1").hide();
 	$("#block2").show();
 });
 
-$("#comprar").click(function () {
+$("#comprar").click(function () { // mostrar select de juegos
 	$("#block2").hide();
 	$("#block3").show();
 });
 
-$("#juego1").click(function () {
+$("#juego1").click(function () { // mostrar juego versión 1
 	$("#block3").hide();
 	$("#block4").show();
 });
 
-$("#juego2").click(function () {
+$("#juego2").click(function () { // mostrar juego versión 2
 	$("#block3").hide();
 	$("#block4").show();
 });
 
-$("#juego3").click(function () {
+$("#juego3").click(function () { // mostrar juego versión 3
 	$("#block3").hide();
 	$("#block4").show();
 });
 
-$("#juego4").click(function () { //pagina de slots
+$("#juego4").click(function () { // mostrar juego versión 4
 	$("#block3").hide();
 	$("#block4").show();
 });
 
-$("#imgLogo").click(function () {
+// atajos de navegación
+
+$("#imgLogo").click(function () { // ir al selec de juegos (desde el logo)
 	$("#block1").hide();
 	$("#block2").hide();
-	$("#block3").hide();
+	$("#block3").show();
 	$("#block4").hide();
 	$("#block99").hide();
-	$("#block0").show();
+	$("#block0").hide();
 });
 
-//Botones x10 x50 x100
+$("#checkout").click(function () { // ir al checkout
+	$("#block3").hide();
+	$("#block99").show();
+});
+
+$("#seljuegos").click(function () { // volver al selec de juegos (desde un juego)
+	$("#block1").hide();
+	$("#block2").hide();
+	$("#block3").show();
+	$("#block4").hide();
+	$("#block99").hide();
+	$("#block0").hide();
+});
+
+$("#juegosBack").click(function () { // volver al selec de juegos (desde un juego)
+	$("#block1").hide();
+	$("#block2").hide();
+	$("#block3").show();
+	$("#block4").hide();
+	$("#block99").hide();
+	$("#block0").hide();
+});
+
+$("#reinicio").click(function () { // volver al inicio
+	$("#block99").hide();
+  $("#block0").show();
+});
+
+// Botones x10 x50 x100
 
 $("#ap10").click(function () {
 	$("#ap10").css("background-color", "orange");
@@ -589,19 +641,7 @@ $("#ap100").click(function () {
 	$("#ap100").css("background-color", "orange");
 });
 
-$("#salir").click(function () {
-	$("#block4").hide();
-	$("#block5").show();
-});
 
-$("#end").click(function () {
-	$("#block1").hide();
-	$("#block2").hide();
-	$("#block3").hide();
-	$("#block4").hide();
-	$("#block0").hide();
-	$("#block99").show();
-});
   }
 }
 
