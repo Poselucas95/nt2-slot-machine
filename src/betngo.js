@@ -295,7 +295,14 @@ new Vue({
       console.log(iconos)
       console.log(this.slots)
       return iconos
-    }
-
+    },
+    terminar: function() {
+      this.nombreJugador='',
+      this.creditoInicio=0,
+      this.partidasJugadas=0,
+      this.partidasGanadas=0,
+      this.jackpots=0,
+      this.creditoAcumulado=0
+    },
   }
 })

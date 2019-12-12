@@ -210,7 +210,7 @@
             </div>
             <div class="footer">
               <button style="padding: 10px; position: absolute; top: -60px; left: 10px; background-color: transparent; border: 0; color: orange" id='juegosBack'> <i class="fas fa-arrow-circle-left fa-3x"></i> </button>
-              <button style="padding: 10px; position: absolute; top: -60px; right: 10px; background-color: transparent; border: 0; color: orange" id='reinicio'> <i class="fas fa-power-off fa-3x"></i> </button>
+              <button style="padding: 10px; position: absolute; top: -60px; right: 10px; background-color: transparent; border: 0; color: orange" id='reinicio' v-on:click="terminar()"> <i class="fas fa-power-off fa-3x"></i> </button>
             </div>
 
         </div>
@@ -568,8 +568,15 @@ export default {
       this.slots[2].items = iconos
       this.juego = juegoNuevo
       return iconos
-    }
-
+    },
+    terminar: function() {
+      this.nombreJugador='',
+      this.creditoInicio=0,
+      this.partidasJugadas=0,
+      this.partidasGanadas=0,
+      this.jackpots=0,
+      this.creditoAcumulado=0
+    },
   },
 
 
@@ -641,9 +648,11 @@ $("#juegosBack").click(function () { // volver al selec de juegos (desde el chec
 });
 
 $("#reinicio").click(function () { // volver al inicio
-	$("#block99").hide();
+  $("#block99").hide();
   $("#block0").show();
 });
+
+
 
 // Botones x10 x50 x100
 
