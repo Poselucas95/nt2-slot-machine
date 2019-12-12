@@ -2,9 +2,9 @@
     <div id='betngo'>
         <!---HEADER--->
         <div class="main-img">
-            <br>
+            <br/>
                 <img id=""  src="images/logo.png" />
-            <br>
+            <br/>
         </div>
         <!---HEADER--->
 
@@ -24,7 +24,7 @@
         <div id="block1" style="display:none">
             <div class="banner-area">
                 <h1 class="descrOptin" style="display:block">
-                    <span class="">Ingresa tu Nick<br></span>
+                    <span class="">Ingresa tu Nick<br/></span>
                 </h1>
                 <div class="form">
                     <form id="formSubscription" name="contacto">
@@ -492,41 +492,48 @@ export default {
         next(this.animate)
       }
     },
+
     mostrarAyuda: function () {
       Swal.fire({
-  title:  'BETNGO - RULEZ',
-  icon: 'info',
-  html:
-      '1.	Escoge entre la variedad de juegos disponibles.  <br>' +
-      '2.	Selecciona tu apuesta antes de cada tirada.  <br>' +
-      '3.	Haz girar los tambores presionando "Jugar".  <br>' +
-      '4.	Espera que se detengan y formen las combinaciones.  <br>' +
-      '5.	Con 3 figuras iguales ganaras un premio en relación a tu apuesta.  <br>' + 
-      '6.	Las jugadas no ganadoras incrementan el Jackpot en un décimo de la apuesta. <br> <br>' +
+        title:  '<h2 style="position: relative;max-width: 100% !important;margin: 0 0 .4em !important;padding: 0 !important; color: #595959 !important; font-size: 0.5em !important; font-weight: 600 !important; text-align: center !important; text-transform: none !important;word-wrap: break-word !important">BETNGO - RULEZ</h2>',
+        icon: 'info',
+        html:
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Elige entre la variedad de juegos disponibles.  </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Selecciona tu apuesta antes de cada tirada.    </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Haz girar los tambores presionando "Jugar".    </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Espera se detengan los tambores.    </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Con 3 figuras iguales ganaras un premio.    </p><br/>' + 
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Las jugadas no ganadoras incrementan el Jackpot.   </p><br/>'+
+            '<br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"><strong> Juego1: Vegas Slots</strong>  </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Dificultad: Muy Baja</p><br/>'+
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Probabilidad de Ganar: 3.70%   </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Combinaciones: 3 de 3   </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Ganancia: apuesta x 20   </p><br/>' +
+            '<br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"><strong> Juego2: Slotomania</strong></p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Dificultad: Baja </p><br/>' + 
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Probabilidad de Ganar: 1.56%   </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Combinaciones: 3 de 4 </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Ganancia: apuesta x 30 </p><br/>' +
+            '<br/>' +      
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"><strong>Juego3: Ceasars Slots</strong></p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Dificultad: Media </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Probabilidad de Ganar: 0.80%   </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Combinaciones: 3 de 5 </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Ganancia: apuesta x 50 </p><br/>'+
+            '<br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"><strong> Juego4: XXL Chifei</strong></p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Dificultad: Alta </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Probabilidad de Ganar: 0.46%   </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> Combinaciones: 3 de 6 </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;;"> Ganancia: apuesta x 80 </p><br/>' +
+            '<p style="font-size: 0.7em; margin: 0; padding: 0; line-height: 0;"> <strong>Jackpot:</strong> 3 x gato de la fortuna </p>',
 
-      'Juego1: Vegas Slots  <br>' +
-      'Dificultad: baja (chance 3.70%) <br>' +
-      'Combinaciones: 3 de 3 <br>' +
-      'Ganancia: apuesta x 20 <br> <br>' +
-
-      'Juego2: Slotomania <br>' +
-      'Dificultad: media baja (chance 1.56%) <br>' + 
-      'Combinaciones: 3 de 4 <br>' +
-      'Ganancia: apuesta x 30 <br> <br>' +
- 
-      'Juego3: Ceasars Slots <br>' +
-      'Dificultad: media <br>' +
-      'Combinaciones: 3 de 5 (chance 0.80%) <br>' +
-      'Ganancia: apuesta x 50 <br> <br>' +
-
-      'Juego4: XXL Chifei <br>' +
-      'Dificultad: alta <br>' +
-      'Combinaciones: 3 de 6 (chance 0.46%) <br>' +
-      'Ganancia: apuesta x 80 <br>' +
-      'Jackpot: 3 x gato de la fortuna',
-    showCloseButton: true,
-})
+          showCloseButton: true,
+      })
     },
+
     darPremio: function () {
       // Gana sin jackpot
       if (this.elegidos[0].nombre == this.elegidos[1].nombre && this.elegidos[1].nombre == this.elegidos[2].nombre && !this.elegidos[0].esJackpot) {
