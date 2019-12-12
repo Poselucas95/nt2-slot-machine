@@ -231,15 +231,6 @@
     <!---END OF FOOTER--->
 </div>
 
-
-    <!---MODAL INFO--->
-
-
-    <!---FIN MODAL INFO--->
-
-
-
-
 </template>
 
 <script>
@@ -503,10 +494,10 @@ export default {
     },
     mostrarAyuda: function () {
       Swal.fire({
-  title:  'BETNGO - REGLAS DE JUEGO',
+  title:  'BETNGO - RULEZ',
   icon: 'info',
   html:
-    '1.	Escoge entre la variedad de juegos disponibles.  <br>' +
+      '1.	Escoge entre la variedad de juegos disponibles.  <br>' +
       '2.	Selecciona tu apuesta antes de cada tirada.  <br>' +
       '3.	Haz girar los tambores presionando "Jugar".  <br>' +
       '4.	Espera que se detengan y formen las combinaciones.  <br>' +
@@ -604,7 +595,7 @@ export default {
     },
     terminar: function() {
       this.nombreJugador='',
-      this.creditoInicio=0,
+      //this.creditoInicio=0,
       this.partidasJugadas=0,
       this.partidasGanadas=0,
       this.jackpots=0,
