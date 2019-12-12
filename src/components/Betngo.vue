@@ -136,7 +136,7 @@
 
         <div class="footer">
           <button style="padding: 10px; position: absolute; top: -60px; left: 10px; background-color: transparent; border: 0; color: orange" id='seljuegos'> <i class="fas fa-arrow-circle-left fa-3x"></i> </button>
-          <button style="padding: 10px; position: absolute; top: -60px; right: 10px; background-color: transparent; border: 0; color: orange" id='info2'> <i class="fas fa-info fa-3x"></i> </button>
+          <button @click="mostrarAyuda" style="padding: 10px; position: absolute; top: -60px; right: 10px; background-color: transparent; border: 0; color: orange" id='info'> <i class="fas fa-info fa-3x"></i> </button>
         </div>
 
         </div>
