@@ -88,7 +88,7 @@
                 <!--fin tarjetas de juegos-->
             </div>
             <div class="footer">
-              <button style="padding: 10px; position: absolute; top: -60px; left: 10px; background-color: transparent; border: 0; color: orange" id='info'> <i class="fas fa-info fa-3x"></i> </button>
+              <button @click="mostrarAyuda" style="padding: 10px; position: absolute; top: -60px; left: 10px; background-color: transparent; border: 0; color: orange" id='info'> <i class="fas fa-info fa-3x"></i> </button>
               <button style="padding: 10px; position: absolute; top: -60px; right: 10px; background-color: transparent; border: 0; color: orange" id='checkout'> <i class="fas fa-sign-out-alt fa-3x"></i> </button>
             </div>
         </div>
@@ -249,7 +249,6 @@ import 'sweetalert2/dist/sweetalert2.min.css'
 
 const $ = require('jquery')
 window.$ = $
-
 
 
 const next = window.requestAnimationFrame ||
@@ -502,6 +501,41 @@ export default {
         next(this.animate)
       }
     },
+    mostrarAyuda: function () {
+      Swal.fire({
+  title:  'BETNGO - REGLAS DE JUEGO',
+  icon: 'info',
+  html:
+    '1.	Escoge entre la variedad de juegos disponibles.  <br>' +
+      '2.	Selecciona tu apuesta antes de cada tirada.  <br>' +
+      '3.	Haz girar los tambores presionando "Jugar".  <br>' +
+      '4.	Espera que se detengan y formen las combinaciones.  <br>' +
+      '5.	Con 3 figuras iguales ganaras un premio en relación a tu apuesta.  <br>' + 
+      '6.	Las jugadas no ganadoras incrementan el Jackpot en un décimo de la apuesta. <br> <br>' +
+
+      'Juego1: Vegas Slots  <br>' +
+      'Dificultad: baja (chance 3.70%) <br>' +
+      'Combinaciones: 3 de 3 <br>' +
+      'Ganancia: apuesta x 20 <br> <br>' +
+
+      'Juego2: Slotomania <br>' +
+      'Dificultad: media baja (chance 1.56%) <br>' + 
+      'Combinaciones: 3 de 4 <br>' +
+      'Ganancia: apuesta x 30 <br> <br>' +
+ 
+      'Juego3: Ceasars Slots <br>' +
+      'Dificultad: media <br>' +
+      'Combinaciones: 3 de 5 (chance 0.80%) <br>' +
+      'Ganancia: apuesta x 50 <br> <br>' +
+
+      'Juego4: XXL Chifei <br>' +
+      'Dificultad: alta <br>' +
+      'Combinaciones: 3 de 6 (chance 0.46%) <br>' +
+      'Ganancia: apuesta x 80 <br>' +
+      'Jackpot: 3 x gato de la fortuna',
+    showCloseButton: true,
+})
+    },
     darPremio: function () {
       // Gana sin jackpot
       if (this.elegidos[0].nombre == this.elegidos[1].nombre && this.elegidos[1].nombre == this.elegidos[2].nombre && !this.elegidos[0].esJackpot) {
@@ -525,7 +559,6 @@ export default {
         this.jackpots += 1
         this.jackpotGanado = jackpotAcumulado
         this.jackpotAcumulado = 5000
-        alert('FELICITACIONES!!! HAZ GANADO EL JACKPOT DE $ ' + this.jackpotGanado)
         Swal.fire({
           title: '¡¡FELICITACIONES!! HAZ GANADO EL JACKPOT DE $ ' + this.jackpotGanado,
           width: 600,
